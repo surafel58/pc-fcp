@@ -1,0 +1,30 @@
+  rep 200/200  DP-FedCP=90.5  Oracle Weights=90.7  Unweighted Local=90.5  Unweighted Global=90.1
+
+method              mean cov   std      median    set size
+Unweighted Global   90.12      1.16     90.10     1.170
+Unweighted Local    90.48      4.50     90.85     1.202
+Oracle Weights      90.67      2.79     91.10     1.180
+DP-FedCP            90.45      2.27     90.65     1.176
+
+PAPER'S QUALITATIVE TARGETS (Fig. 1b; the paper gives no numbers):
+  1. DP-FedCP close to Oracle Weights   ('little different from ... oracle weights')
+  2. DP-FedCP near the nominal 90%
+  3. Unweighted Local near nominal but with visibly LARGER spread (N*=50)
+  4. Unweighted Global displaced away from 90% (dominated by agent 1)
+
+CHECKS:
+  1. |DP-FedCP - Oracle|      =  0.22 pp   PASS (tol 2.0)
+  2. |DP-FedCP - 90%|         =  0.45 pp   PASS (tol 2.5)
+  3. spread(Local)/spread(DP) =  1.98x    PASS (>1.5)
+  4. |Global - 90%|           =  0.12 pp   NOT REPRODUCED (worse than DP-FedCP)
+
+NOTE ON CHECK 4. In our configuration Unweighted Global lands near nominal
+(per-class coverage 91.9/91.0/92.0 at alpha=0.1), so it is not displaced the
+way Fig. 1b shows. This depends on the score distributions, which depend on
+two details the paper does not specify: the Bayes classifier's class prior
+(D6) and the composition of the test set over which coverage is measured
+(D8). Checks 1-3, which are the paper's actual claims about DP-FedCP, all
+pass. We record check 4 as NOT REPRODUCED rather than tuning D6/D8 until it
+matches, since that would be fitting the baseline to a desired outcome.
+
+[exited with code 0]
