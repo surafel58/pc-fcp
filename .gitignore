@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+data/
+*.npz
+results/*/cache/
+results/*/eval/
+results/*/eval_r100/
+results/*/logs/
+results/batch/*.log
+results/batch/*.out
+results/batch/*.nohup
+tables/
+paper/
