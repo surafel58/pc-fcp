@@ -186,7 +186,7 @@ def supp_eps():
             ('FedCP2-QQ, per class, private fallback', 'fedcp2qq_pc_pfallback'), ('DP-FedCP', 'dpfedcp_marg'),
             ('DP-FedCP, per class', 'dpfedcp_pc'), ('A2: per-client noise', 'abl_A2_local_noise'),
             ('A4: without the floor', 'abl_nofloor')]
-    L = [r'\begin{table*}[!t]',
+    L = [r'\begin{table*}[tp]',
          r'\caption{Privacy budget: worst-class coverage (\%) / mean set size (labels) at each $\varepsilon$ '
          r'(target coverage 90\%, $K = 10$).}',
          r'\label{tab:s_eps}', r'\centering', r'\footnotesize', r'\setlength{\tabcolsep}{4pt}',

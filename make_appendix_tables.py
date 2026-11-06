@@ -15,7 +15,7 @@ MAIN = [('cifar10', '1.0', 'CIFAR-10-LT (IF = 100), $\\varepsilon = 1$', 'tab:ap
         ('text', '4.0', '20 Newsgroups (IF = 10), $\\varepsilon = 4$', 'tab:app_sd_text')]
 ROWS = [('Mondrian (central.)$^\\dagger$', 'mondrian'), ('Clustered CP$^\\dagger$', 'clustered_ding'),
         ('DP-FedCP', 'dpfedcp_marg'), ('DP-FedCP, per class', 'dpfedcp_pc'), ('FedCP2-QQ', 'fedcp2qq_marg'),
-        ('FedCP2-QQ, per class', 'fedcp2qq_pc'), ('FedCP2-QQ, per class, fallback', 'fedcp2qq_pc_fallback'),
+        ('FedCP2-QQ, per class', 'fedcp2qq_pc'), ('FedCP2-QQ, per class, private fallback', 'fedcp2qq_pc_pfallback'),
         ('\\textbf{PC-FCP (ours)}', 'pcfcp')]
 COLS = [('macro', 1), ('marg_lt', 1), ('tail', 1), ('worst', 1), ('undercov', 2), ('size', 2), ('size_lt', 2),
         ('always', 1)]

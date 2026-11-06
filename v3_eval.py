@@ -76,7 +76,12 @@ class Data:
         if kind not in self.scores:
             if kind == 'aps':
                 cs = g.aps_score_true(self.cal_probs, self.cal_labels, np.random.RandomState(2024 + self.seed))
-                ta = g.aps_score_all(self.test_probs, np.random.RandomState(9000 + self.seed))
+                # 2026-11-04 (proof review): APS scores lie in [0, 1], but float32 probability
+                # rows sum to up to 1 + 3.4e-7, so a few low-ranked test scores came out just
+                # above 1 and were wrongly excluded by a threshold equal to the top edge 1.
+                # Test scores are clipped to [0, 1], as the calibration scores already are in
+                # every histogram; thresholds are unchanged by this.
+                ta = np.clip(g.aps_score_all(self.test_probs, np.random.RandomState(9000 + self.seed)), 0.0, 1.0)
             else:
                 cs = 1.0 - self.cal_probs[np.arange(len(self.cal_labels)), self.cal_labels]
                 ta = 1.0 - self.test_probs
@@ -601,9 +606,19 @@ def run_group(args):
     elif group.startswith('dpfedcp'):
         # 'dpfedcp' runs every draw; 'dpfedcp_r<r>' runs draw r only (same seeds, so the
         # split is only for parallelism: 100-class DP-FedCP takes hours per draw)
-        draws = range(R_SLOW) if group in ('dpfedcp', 'dpfedcp23') else [int(group.split('_r')[1])]
+        draws = range(R_SLOW) if group in ('dpfedcp', 'dpfedcp23', 'dpfedcpsg') else [int(group.split('_r')[1])]
         only23 = group.startswith('dpfedcp23')
+        onlysg = group.startswith('dpfedcpsg')
         for r in draws:
+            if onlysg:
+                # 2026-11-04 (examiner comment B6): the rest of the paper's own sigma_g grid
+                # {10, 30, 60, 100} (its ImageNet privacy study); sigma_g = 100 is in 'dpfedcp'.
+                # Same pattern as the sigma_g = 100 rows: one noise stream per method name.
+                for sgv in (10.0, 30.0, 60.0):
+                    lab = f'sg{int(sgv)}'
+                    rec(f'dpfedcp_marg_{lab}', lab, 0.1, r, dpfedcp_marginal(D, pc, 0.1, rs(D, f'dpfedcp_marg_{lab}', 'inf', 0.1, r), sigma=sgv), ta)
+                    rec(f'dpfedcp_pc_{lab}', lab, 0.1, r, dpfedcp_perclass(D, pc, 0.1, rs(D, f'dpfedcp_pc_{lab}', 'inf', 0.1, r), sgv), ta)
+                continue
             if only23:
                 for eps in (2.0, 3.0):
                     sg = g.sigma_g_from_eps(eps)
@@ -658,7 +673,7 @@ def main():
         # not propose, such as 'dpfedcp'); without it, jobs_for decides per cache tag
         for grp in (a.groups.split(',') if a.groups else jobs_for(os.path.basename(p))):
             if True:
-                if grp in ('dpfedcp', 'dpfedcp23'):
+                if grp in ('dpfedcp', 'dpfedcp23', 'dpfedcpsg'):
                     tasks += [(p, f'{grp}_r{r}', cfg) for r in range(a.r_slow)]
                 else:
                     tasks.append((p, grp, cfg))
