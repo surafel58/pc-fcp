@@ -1,0 +1,39 @@
+  B=4 cubic: 1820 configs so far, 177s
+  B=4 unif: 3640 configs so far, 298s
+  B=8 cubic: 5460 configs so far, 397s
+  B=8 unif: 7280 configs so far, 481s
+  B=16 cubic: 9100 configs so far, 624s
+  B=16 unif: 10920 configs so far, 786s
+
+configs: 10920, R = 10000 per config
+Theorem 1 violations (no-noise cov < r/(n+1)):            0
+Theorem 2 violations (cov < (r - E[D])/(n+1) - 4 se):     0
+Lemma 1 violations (E[D] >= 1 + f + (2+a)sqrt(2B)/eps):   0
+Proposition 4 violations (margin cov < 1 - a - gamma):    0
+
+Tightest Theorem 2 cases (smallest slack):
+ B edges  alpha  eps   n        dist  cov_main  bound_thm2       ED  slack_thm2
+16  unif   0.05  8.0 250 beta(0.5,3)    0.9575    0.948358 0.962175    0.009142
+16  unif   0.05  4.0 250 beta(0.5,3)    0.9580    0.946820 1.348140    0.011180
+16 cubic   0.05  8.0 250     uniform    0.9613    0.948358 0.962175    0.012942
+16 cubic   0.05  4.0 250     uniform    0.9600    0.946820 1.348140    0.013180
+16 cubic   0.05  4.0 250   beta(2,2)    0.9609    0.946820 1.348140    0.014080
+16  unif   0.05  2.0 250 beta(0.5,3)    0.9582    0.943449 2.194375    0.014751
+16 cubic   0.05  8.0 250   beta(2,2)    0.9641    0.948358 0.962175    0.015742
+16 cubic   0.05  4.0 250 beta(0.5,3)    0.9630    0.946820 1.348140    0.016180
+ 8 cubic   0.05  4.0 250   beta(2,2)    0.9653    0.948195 1.003065    0.017105
+16 cubic   0.05  8.0  80     uniform    0.9578    0.939689 0.885212    0.018111
+16 cubic   0.05  8.0 250   beta(5,1)    0.9665    0.948358 0.962175    0.018142
+16 cubic   0.10  8.0 250     uniform    0.9151    0.896873 0.884927    0.018227
+
+Tightest Proposition 4 cases:
+ B edges  alpha  eps   n        dist  cov_margin  bound_prop4  slack_prop4
+16  unif   0.05  8.0 250 beta(0.5,3)      0.9721         0.90       0.0721
+16 cubic   0.05  8.0 250     uniform      0.9743         0.90       0.0743
+ 4 cubic   0.05  4.0 250 beta(0.5,3)      0.9753         0.90       0.0753
+ 4 cubic   0.05  8.0 250 beta(0.5,3)      0.9758         0.90       0.0758
+16 cubic   0.05  8.0 250   beta(5,1)      0.9768         0.90       0.0768
+16 cubic   0.05  8.0 250   beta(2,2)      0.9773         0.90       0.0773
+16 cubic   0.10  8.0 250     uniform      0.9275         0.85       0.0775
+16 cubic   0.05  8.0 250 beta(0.5,3)      0.9775         0.90       0.0775
+stress done 0

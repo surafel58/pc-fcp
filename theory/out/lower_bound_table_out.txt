@@ -1,0 +1,12 @@
+B = 8, alpha = 0.1
+n_c =  25 (k_0 = 2, f = 0.6, r_c = 24)
+  E[D_c]: eps=1: 2.60  eps=2: 1.52  eps=3: 1.16  eps=4: 1.00  eps=8: 0.81
+  bound:  eps=1: 0.823  eps=2: 0.865  eps=3: 0.878  eps=4: 0.885  eps=8: 0.892
+n_c = 250 (k_0 = 25, f = 0.1, r_c = 226)
+  E[D_c]: eps=1: 2.17  eps=2: 1.20  eps=3: 0.95  eps=4: 0.85  eps=8: 0.79
+  bound:  eps=1: 0.892  eps=2: 0.896  eps=3: 0.897  eps=4: 0.897  eps=8: 0.897
+
+Table S-II, lower-bound row (eps = 1, n_c = 25, cubic bins):
+  B =  4: E[D_c] = 1.5752 (se 0.0004), bound = 0.8625
+  B =  8: E[D_c] = 2.5983 (se 0.0004), bound = 0.8231
+  B = 16: E[D_c] = 3.9755 (se 0.0004), bound = 0.7702

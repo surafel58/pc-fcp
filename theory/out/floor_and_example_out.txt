@@ -1,0 +1,25 @@
+eps = 1.0
+  class 0 n=250 beta(0.5, 6): cov with floor 0.9985, Theorem 2 bound 0.8918 OK | cov without floor 0.9685, Proposition 3 bound 1.880 OK | P(pool > own) 1.000, bound with floor 2.880 OK
+  class 1 n=160 beta(0.5, 4): cov with floor 0.9903, Theorem 2 bound 0.8872 OK | cov without floor 0.9401, Proposition 3 bound 1.581 OK | P(pool > own) 0.713, bound with floor 2.295 OK
+  class 2 n=100 beta(0.7, 3): cov with floor 0.9580, Theorem 2 bound 0.8795 OK | cov without floor 0.9543, Proposition 3 bound 1.088 OK | P(pool > own) 0.044, bound with floor 1.133 OK
+  class 3 n= 64 beta(1, 3): cov with floor 0.9470, Theorem 2 bound 0.8689 OK | cov without floor 0.9457, Proposition 3 bound 1.105 OK | P(pool > own) 0.014, bound with floor 1.119 OK
+  class 4 n= 40 beta(1, 2): cov with floor 0.9380, Theorem 2 bound 0.8497 OK | cov without floor 0.9376, Proposition 3 bound 1.086 OK | P(pool > own) 0.002, bound with floor 1.088 OK
+  class 5 n= 25 beta(0.5, 6): cov with floor 0.9992, Theorem 2 bound 0.8231 OK | cov without floor 0.9833, Proposition 3 bound 1.518 OK | P(pool > own) 0.532, bound with floor 2.050 OK
+  class 6 n= 25 beta(2, 2): cov with floor 0.9338, Theorem 2 bound 0.8233 OK | cov without floor 0.9338, Proposition 3 bound 1.112 OK | P(pool > own) 0.000, bound with floor 1.112 OK
+  class 7 n= 16 beta(2, 1.5): cov with floor 0.9356, Theorem 2 bound 0.7837 OK | cov without floor 0.9356, Proposition 3 bound 1.177 OK | P(pool > own) 0.000, bound with floor 1.177 OK
+  class 8 n= 12 beta(3, 1.5): cov with floor 0.9535, Theorem 2 bound 0.7416 OK | cov without floor 0.9535, Proposition 3 bound 1.405 OK | P(pool > own) 0.000, bound with floor 1.405 OK
+  class 9 n= 10 beta(1, 1): cov with floor 0.9677, Theorem 2 bound 0.7121 OK | cov without floor 0.9675, Proposition 3 bound 1.596 OK | P(pool > own) 0.001, bound with floor 1.597 OK
+eps = 4.0
+  class 0 n=250 beta(0.5, 6): cov with floor 0.9980, Theorem 2 bound 0.8970 OK | cov without floor 0.9683, Proposition 3 bound 1.874 OK | P(pool > own) 1.000, bound with floor 2.874 OK
+  class 1 n=160 beta(0.5, 4): cov with floor 0.9898, Theorem 2 bound 0.8953 OK | cov without floor 0.9339, Proposition 3 bound 1.635 OK | P(pool > own) 0.775, bound with floor 2.410 OK
+  class 2 n=100 beta(0.7, 3): cov with floor 0.9558, Theorem 2 bound 0.8926 OK | cov without floor 0.9553, Proposition 3 bound 1.070 OK | P(pool > own) 0.004, bound with floor 1.074 OK
+  class 3 n= 64 beta(1, 3): cov with floor 0.9425, Theorem 2 bound 0.8923 OK | cov without floor 0.9425, Proposition 3 bound 1.095 OK | P(pool > own) 0.000, bound with floor 1.095 OK
+  class 4 n= 40 beta(1, 2): cov with floor 0.9382, Theorem 2 bound 0.8817 OK | cov without floor 0.9382, Proposition 3 bound 1.050 OK | P(pool > own) 0.000, bound with floor 1.050 OK
+  class 5 n= 25 beta(0.5, 6): cov with floor 0.9985, Theorem 2 bound 0.8845 OK | cov without floor 0.9717, Proposition 3 bound 1.757 OK | P(pool > own) 0.833, bound with floor 2.590 OK
+  class 6 n= 25 beta(2, 2): cov with floor 0.9455, Theorem 2 bound 0.8845 OK | cov without floor 0.9455, Proposition 3 bound 1.061 OK | P(pool > own) 0.000, bound with floor 1.061 OK
+  class 7 n= 16 beta(2, 1.5): cov with floor 0.9474, Theorem 2 bound 0.8821 OK | cov without floor 0.9474, Proposition 3 bound 1.062 OK | P(pool > own) 0.000, bound with floor 1.062 OK
+  class 8 n= 12 beta(3, 1.5): cov with floor 0.9325, Theorem 2 bound 0.8462 OK | cov without floor 0.9325, Proposition 3 bound 1.113 OK | P(pool > own) 0.000, bound with floor 1.113 OK
+  class 9 n= 10 beta(1, 1): cov with floor 0.9290, Theorem 2 bound 0.8318 OK | cov without floor 0.9290, Proposition 3 bound 1.244 OK | P(pool > own) 0.000, bound with floor 1.244 OK
+n_c = 10 example, eps = inf: simulated coverage 0.9087 (200000 orders)
+n_c = 10 example, eps = 1000.0: simulated coverage 0.8701 (200000 orders)
+n_c = 10 example, small-noise limit: 9/11 + (1 + q)/22 = 0.869 (q = 0.1130)

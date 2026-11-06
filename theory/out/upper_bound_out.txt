@@ -1,0 +1,25 @@
+  B=4 cubic: 2660 configs, 90s
+  B=4 unif: 5320 configs, 167s
+  B=8 cubic: 7980 configs, 249s
+  B=8 unif: 10640 configs, 335s
+  B=16 cubic: 13300 configs, 435s
+  B=16 unif: 15960 configs, 540s
+
+configs: 15960, R = 10000
+Proposition 3  violations: 0
+tighter form   violations: 0
+
+Upper bound of Proposition 3 at B = 8, alpha = 0.1, eps = 1, over the six real score laws:
+  n_c =  25: 1.073 to 1.103
+  n_c = 250: 0.977 to 1.042
+Mean over the six laws at each eps (B = 8):
+  n_c =  25: eps=0.5: 1.195  eps=1: 1.089  eps=2: 1.049  eps=4: 1.030  eps=8: 1.022
+  n_c = 250: eps=0.5: 1.012  eps=1: 1.003  eps=2: 0.998  eps=4: 0.996  eps=8: 0.995
+
+Table S-II (eps = 1, n_c = 25, cubic bins; means over the six real score laws;
+the lower-bound row is given by theory/lower_bound_table.py):
+  B =  4: bin term 0.164, simulated coverage 0.952
+  B =  8: bin term 0.080, simulated coverage 0.925
+  B = 16: bin term 0.038, simulated coverage 0.915
+
+Share of configs with an informative bound (< 1): 0.148 | with the largest bin in place of p(b*): 0.081
