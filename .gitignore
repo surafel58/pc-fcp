@@ -11,3 +11,4 @@ results/batch/*.out
 results/batch/*.nohup
 tables/
 paper/
+paper_v2/
